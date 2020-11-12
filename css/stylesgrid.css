@@ -1,0 +1,106 @@
+@import "stylesgridgenerales.css"; 
+
+.container{
+    display: grid;
+    /* grid-template-columns: minmax(20px, 1fr) 200px minmax(100px, 937px) minmax(20px, 1fr);
+    grid-template-rows: repeat(4, auto);
+
+    grid-template-areas: "header     header      header      header"
+                         "nav        nav         nav         nav"
+                         ".          aside       main        ."
+                         "footer     footer      footer      footer"; */
+
+
+    grid-template-columns: minmax(10px, 1fr) 200px minmax(10px, 70px) minmax(10px, 937px) minmax(20px, 1fr);
+    grid-template-rows: repeat(4, auto);
+                     
+    grid-template-areas: "header     header     header      header      header"
+                          "nav        nav       nav         nav         nav"
+                          ".          aside     .           main        ."
+                          "footer     footer    footer      footer      footer";
+
+    gap: 30px 0px;
+}
+
+#header{
+    grid-area: header;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    color: #70b231;
+}
+
+#nav{
+    grid-area: nav;
+    width: 100%;
+    background-color: #333;
+}
+
+#nav ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    list-style: none;
+}
+
+
+
+#nav2{
+    grid-area: nav2;
+    display: none;
+}
+
+
+
+#aside{
+    grid-area: aside;
+
+}
+
+#main{
+    grid-area: main;
+
+    /* width: 937px; */
+    
+}
+
+.article{
+    width: 100%;
+    min-width: 100px;
+}
+
+#footer{
+    grid-area: footer;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1061px){
+    .container{
+        grid-template-columns: minmax(20px, 1fr) minmax(10px,200px) minmax(20px, 50px) minmax(100px, 937px) minmax(20px, 1fr);
+    }
+
+    .stickerOne, .stickerTwo{
+        display: none;
+    }
+}
+
+@media (max-width: 702px){
+    .container{
+        grid-template-areas: "header     header     header      header      header"
+                          ".        nav       nav         nav         ."
+                          ".          main     main           main        ."
+                          ".          aside     aside           aside        ."
+                          "footer     footer    footer      footer      footer";
+    }
+
+    #nav ul li{
+        width: 100%;
+        text-align: center;
+    }
+    
+}
+
